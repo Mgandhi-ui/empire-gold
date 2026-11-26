@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   description: 'Phase II of Empire Gold: 35 homes on floors 8–15 above a delivered, occupied Phase I. 252–621 sq.ft MahaRERA carpet, 2 minutes from Dockyard Road station. MahaRERA P51900008690.',
   openGraph: { type: 'website', siteName: 'Empire Gold', images: ['/og.jpg'], locale: 'en_IN' },
 };
-export const viewport: Viewport = { themeColor: '#0F1E3D', width: 'device-width', initialScale: 1 };
+export const viewport: Viewport = { themeColor: '#182E44', width: 'device-width', initialScale: 1 };
 
 const PIXEL = process.env.NEXT_PUBLIC_META_PIXEL_ID;
 const GA = process.env.NEXT_PUBLIC_GA_ID;
@@ -26,7 +26,7 @@ export default function SiteLayout({ children }: { children: React.ReactNode }) 
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
         {/* eslint-disable-next-line @next/next/no-page-custom-font */}
-        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..700&display=swap" rel="stylesheet" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(ld) }} />
       </head>
       <body>

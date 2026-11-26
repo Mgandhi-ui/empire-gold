@@ -10,10 +10,10 @@ export function Header() {
   return (
     <header className="hdr">
       <div className="wrap">
-        <Link className="logo" href="/">Empire <span>Gold</span></Link>
+        <Link className="logo" href="/"><i aria-hidden="true" />Empire Gold</Link>
         <nav className="nav" aria-label="Sections">
-          <Link href="/#building">The building</Link><Link href="/#homes">Homes</Link><Link href="/#location">Location</Link>
-          <Link href="/#specs">Specifications</Link><Link href="/partners">Brokers</Link><Link href="/#enquire">Visit</Link>
+          <Link href="/#view">The view</Link><Link href="/#floors">Floors</Link><Link href="/#homes">Inside</Link>
+          <Link href="/#location">Location</Link><Link href="/partners">Brokers</Link><Link href="/#visit">Visit</Link>
         </nav>
         <div className="rera" aria-label={`MahaRERA registration ${P.rera}`}>
           <div><small>MahaRERA REG. NO.</small><b>{P.rera}</b><span>{P.reraSite}</span></div>
@@ -31,7 +31,7 @@ export function Footer() {
         <div className="r">MahaRERA Registration No. {P.rera} · {P.reraSite}</div>
         <p>Empire Gold, {P.address} · {P.phones.join(' · ')}</p>
         <p>Promoter: {P.developer}. This website is for information only and is not an offer, an invitation to offer or a contract. Areas are MahaRERA carpet areas. Images and layouts are artistic impressions; furniture, appliances and décor are not included. The fitness centre and 15th-floor terraces are common amenities, not part of any flat. Specifications and availability may change; the registered agreement for sale prevails.</p>
-        <p><Link href="/privacy">Privacy</Link> · <Link href="/partners">Channel partners</Link> · <a href="https://back.empiregoldmazgaon.com/login">Partner and buyer login</a></p>
+        <p><Link href="/privacy">Privacy</Link> &nbsp; <Link href="/partners">Channel partners</Link> &nbsp; <a href="https://back.empiregoldmazgaon.com/login">Partner and buyer login</a></p>
       </div>
     </footer>
   );

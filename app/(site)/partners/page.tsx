@@ -36,8 +36,8 @@ export default function Partners() {
             <div className="contactlist">
               <p className="eyebrow">How it works</p>
               <h2>Four steps</h2>
-              <ol style={{ paddingLeft: 20, marginTop: 18, color: '#D8D2C4', display: 'grid', gap: 10 }}>{STEPS.map((s) => <li key={s}>{s}</li>)}</ol>
-              <p style={{ marginTop: 18 }}>Already a partner? <a href="https://back.empiregoldmazgaon.com/login" style={{ color: '#E2C27A' }}>Log in</a></p>
+              <ol style={{ paddingLeft: 20, marginTop: 18, color: '#C9D3DC', display: 'grid', gap: 10 }}>{STEPS.map((s) => <li key={s}>{s}</li>)}</ol>
+              <p style={{ marginTop: 18 }}>Already a partner? <a href="https://back.empiregoldmazgaon.com/login" style={{ color: '#fff' }}>Log in</a></p>
             </div>
             <PartnerForm />
           </div>
