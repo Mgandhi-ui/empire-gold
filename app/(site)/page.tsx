@@ -4,7 +4,6 @@ import { fmtDate } from '@/lib/core';
 import { P, DISTANCES, SPECS, AMENITIES, FLATS } from '@/lib/project';
 import { Header, Footer } from './_c/Chrome';
 import Floors from './_c/Floors';
-import Film from './_c/Film';
 import EnquiryForm from './_c/EnquiryForm';
 
 export const revalidate = 300; // refresh booked flats and updates every 5 minutes
@@ -45,35 +44,9 @@ export default async function Home() {
             <p>Empire Gold Phase II, floors 8 to 15. The seven floors below are already built and lived in.</p>
             <div className="acts">
               <a className="btn btn-gold" href="#visit">Book a site visit</a>
-              <a className="btn btn-line" href="#view">See the view</a>
+              <a className="btn btn-line" href="#floors">See the floors</a>
             </div>
           </div></div>
-        </section>
-
-        <section className="view" id="view">
-          <Film src="/img/view-harbour.mp4" poster="/img/view-harbour.jpg" label="Drone footage from the site toward Mazagon Dock and the harbour"
-            caption="Filmed from the site at Phase II height, looking toward Mazagon Dock, the harbour and the islands." />
-          <div className="wrap">
-            <div className="intro">
-              <h2>From floor 8 up, Mazgaon opens out</h2>
-              <p className="lead">The dock-side homes look across the Mazagon Dock gantry to the harbour. The other side faces the green of Mazgaon hill.</p>
-            </div>
-            <div className="pair">
-              <img src="/img/living-a.jpg" alt="A furnished 1 BHK living room with a wide window looking toward the Mazagon Dock crane and the harbour" loading="lazy" />
-              <div>
-                <h3>The harbour, from the sofa</h3>
-                <p>A 1 BHK living room on the dock side, furnished. The window looks the way the footage above does.</p>
-                <p className="cap">Artistic impression. Furniture and décor are not part of the sale. The view differs by floor and by flat.</p>
-              </div>
-            </div>
-            <div className="pair flip">
-              <div>
-                <h3>Turn around: the hill and the garden</h3>
-                <p>Joseph Baptista Garden sits on Mazgaon hill next door, with the towers of the city behind it.</p>
-              </div>
-              <Film src="/img/view-hill.mp4" poster="/img/view-hill.jpg" label="Drone footage from the site toward Mazgaon hill and Joseph Baptista Garden" />
-            </div>
-          </div>
         </section>
 
         <section className="band stands">
@@ -102,11 +75,6 @@ export default async function Home() {
         <section className="band inside" id="homes" style={{ paddingTop: 0 }}>
           <div className="wrap">
             <h2>Inside</h2>
-            <div className="shots">
-              <img src="/img/bedroom-a.jpg" alt="A furnished bedroom with a grey upholstered bed, wardrobe and a window onto trees and city towers" loading="lazy" />
-              <img src="/img/living-b.jpg" alt="A furnished living room with teal sofas and a window toward the harbour" loading="lazy" />
-            </div>
-            <p className="cap">Artistic impressions of furnished homes. Furniture, appliances and décor are not part of the sale.</p>
             <table className="types">
               <thead><tr><th scope="col">Home</th><th scope="col">Carpet area</th><th scope="col">Rooms</th></tr></thead>
               <tbody>{TYPES.map(([a, b, c]) => <tr key={a}><td>{a}</td><td>{b}</td><td>{c}</td></tr>)}</tbody>

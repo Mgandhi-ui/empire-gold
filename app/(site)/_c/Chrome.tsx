@@ -12,7 +12,7 @@ export function Header() {
       <div className="wrap">
         <Link className="logo" href="/"><i aria-hidden="true" />Empire Gold</Link>
         <nav className="nav" aria-label="Sections">
-          <Link href="/#view">The view</Link><Link href="/#floors">Floors</Link><Link href="/#homes">Inside</Link>
+          <Link href="/#floors">Floors</Link><Link href="/#homes">Inside</Link>
           <Link href="/#location">Location</Link><Link href="/partners">Brokers</Link><Link href="/#visit">Visit</Link>
         </nav>
         <div className="rera" aria-label={`MahaRERA registration ${P.rera}`}>
