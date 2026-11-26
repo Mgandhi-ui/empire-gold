@@ -40,14 +40,14 @@ export default async function Home() {
             <img src="/img/tower-2000.jpg" alt="Empire Gold tower on Dockyard Road, Mazgaon, fifteen storeys with slate, grey and ochre facade panels" fetchPriority="high" />
           </picture>
           <span className="note">Artistic impression</span>
-          <div className="copy">
+          <div className="wrap herowrap"><div className="copy">
             <h1>Thirty-five homes above Dockyard Road</h1>
             <p>Empire Gold Phase II, floors 8 to 15. The seven floors below are already built and lived in.</p>
             <div className="acts">
               <a className="btn btn-gold" href="#visit">Book a site visit</a>
               <a className="btn btn-line" href="#view">See the view</a>
             </div>
-          </div>
+          </div></div>
         </section>
 
         <section className="view" id="view">
