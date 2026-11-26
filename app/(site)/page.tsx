@@ -46,6 +46,7 @@ export default async function Home() {
               <img src="/img/tower-lg.jpg" alt="Architectural render of the Empire Gold tower on Dockyard Road, Mazgaon" fetchPriority="high" />
               <span className="tag t2">Floors 8–15 · Phase II</span>
               <span className="tag t1">Floors 1–7 · Delivered</span>
+              <span className="ai-note">Artistic impression</span>
             </div>
           </div>
         </section>

@@ -164,3 +164,6 @@ img{max-width:100%;display:block}
 .ftr a{color:#D8D2C4}
 .float{position:fixed;right:16px;bottom:16px;z-index:30;box-shadow:0 8px 24px rgba(0,0,0,.25)}
 @media(min-width:861px){.float{display:none}}
+
+.hero-pic{position:relative}
+.hero-pic .ai-note{position:absolute;right:10px;bottom:8px;font-size:11px;letter-spacing:.04em;color:#fff;opacity:.85;text-shadow:0 1px 3px rgba(0,0,0,.6)}
