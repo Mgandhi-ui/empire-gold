@@ -1,0 +1,69 @@
+/* Back office: quiet, dense, fast. Navy bar, white panels, gold only for the one thing that matters on a screen. */
+:root{--navy:#0F1E3D;--gold:#C9A24A;--goldt:#8A6A1F;--bg:#F4F2EC;--card:#fff;--ink:#1B2438;--soft:#5E667A;--line:#E3DED2;--good:#1F7A45;--warn:#A86A00;--bad:#A12A2A}
+*{box-sizing:border-box;min-width:0}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 Inter,system-ui,-apple-system,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#1F4FA0}
+h1{font-size:24px;margin:0 0 4px}h2{font-size:18px;margin:0 0 12px}h3{font-size:15px;margin:0 0 8px}
+.top{background:var(--navy);color:#fff;display:flex;align-items:center;gap:18px;padding:0 20px;min-height:56px;flex-wrap:wrap;position:sticky;top:0;z-index:5}
+.top .brand{font-weight:700;letter-spacing:.02em;white-space:nowrap}.top .brand span{color:var(--gold)}
+.top nav{display:flex;gap:4px;flex-wrap:wrap;overflow-x:auto}
+.top nav a{color:#D7DBE6;text-decoration:none;padding:8px 10px;border-radius:6px;font-size:14px;white-space:nowrap}
+.top nav a:hover{background:rgba(255,255,255,.08);color:#fff}
+.top .me{margin-left:auto;font-size:13px;color:#B9C1D6;white-space:nowrap}.top .me a{color:#fff;margin-left:10px}
+main{max-width:1280px;margin:0 auto;padding:22px 20px 60px}
+.head{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap;margin-bottom:18px}
+.sub{color:var(--soft);font-size:14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px;margin-bottom:18px}
+.grid{display:grid;gap:18px}.g2{grid-template-columns:repeat(2,minmax(0,1fr))}.g3{grid-template-columns:repeat(3,minmax(0,1fr))}
+@media(max-width:900px){.g2,.g3{grid-template-columns:1fr}}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-bottom:18px}
+.kpi{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+.kpi b{display:block;font-size:24px;font-variant-numeric:tabular-nums;white-space:nowrap}
+.kpi span{font-size:13px;color:var(--soft)}
+.kpi.hot{border-color:var(--gold);box-shadow:inset 3px 0 0 var(--gold)}
+.scroll{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:14px}
+th{text-align:left;font-weight:600;color:var(--soft);font-size:12.5px;padding:8px 10px;border-bottom:1px solid var(--line);white-space:nowrap}
+td{padding:9px 10px;border-bottom:1px solid #EFEBE2;vertical-align:top}
+td.n,th.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+tr:hover td{background:#FBFAF6}
+.pill{display:inline-block;padding:2px 9px;border-radius:999px;font-size:12px;font-weight:600;background:#ECEAE3;color:#40475A;white-space:nowrap}
+.pill.new{background:#E7ECF7;color:#2A4B8D}.pill.contacted{background:#E3F1F0;color:#1E6B65}.pill.visit_booked{background:#FFF3D6;color:#8A5A00}
+.pill.visited{background:#FDE7D3;color:#9A4A0B}.pill.negotiation{background:#EFE6F7;color:#6A3A92}.pill.booked,.pill.active,.pill.handed_over{background:#E2F2E7;color:#1F6B3D}
+.pill.lost,.pill.rejected,.pill.cancelled{background:#F8E3E3;color:#9A2A2A}.pill.available{background:#E2F2E7;color:#1F6B3D}.pill.hold,.pill.applied,.pill.paused{background:#FFF3D6;color:#8A5A00}
+.pill.agreement_registered,.pill.possession_offered{background:#E7ECF7;color:#2A4B8D}
+form.f{display:grid;gap:12px}
+.fr{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(170px,1fr))}
+label{display:grid;gap:4px;font-size:13px;font-weight:600;color:#40475A}
+input,select,textarea{font:15px Inter,system-ui,sans-serif;padding:8px 10px;min-height:40px;border:1px solid #CFC8B8;border-radius:8px;background:#fff;color:var(--ink);width:100%}
+textarea{min-height:70px;resize:vertical}
+input[type=checkbox]{width:auto;min-height:0}
+.chk{display:flex;gap:8px;align-items:center;font-weight:500}
+button,.btn{font:600 14px Inter,system-ui,sans-serif;min-height:40px;padding:0 16px;border-radius:8px;border:1px solid var(--navy);background:var(--navy);color:#fff;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:6px;white-space:nowrap}
+button.ghost,.btn.ghost{background:#fff;color:var(--navy)}
+button.danger{background:#fff;color:var(--bad);border-color:#E2B5B5}
+button.gold,.btn.gold{background:var(--gold);border-color:var(--gold);color:var(--navy)}
+.inline{display:flex;gap:8px;align-items:end;flex-wrap:wrap}
+.flash{padding:10px 14px;border-radius:8px;margin-bottom:14px;font-size:14px}
+.flash.ok{background:#E2F2E7;color:#1F5A35;border:1px solid #BFE0CA}.flash.err{background:#F8E3E3;color:#8A2020;border:1px solid #EBC4C4}
+details{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 18px;margin-bottom:18px}
+details>summary{cursor:pointer;font-weight:600}
+details[open]>summary{margin-bottom:12px}
+.muted{color:var(--soft)}.small{font-size:13px}
+.right{text-align:right}
+.bar{height:8px;background:#ECEAE3;border-radius:4px;overflow:hidden}.bar i{display:block;height:100%;background:var(--gold)}
+.floors{display:grid;gap:8px}
+.floor{display:grid;grid-template-columns:60px repeat(5,minmax(0,1fr));gap:8px;align-items:stretch}
+.floor>b{display:flex;align-items:center;font-size:14px}
+.flat{border:1px solid var(--line);border-radius:8px;padding:8px 10px;background:#fff;font-size:13px;text-decoration:none;color:inherit;display:block}
+.flat.booked{background:#EAF4EE;border-color:#BFE0CA}.flat.hold{background:#FFF7E3;border-color:#F0D9A0}
+.flat b{font-size:14px}
+@media(max-width:700px){.floor{grid-template-columns:40px repeat(5,minmax(110px,1fr));overflow-x:auto}}
+.timeline{list-style:none;padding:0;margin:0;display:grid;gap:10px}
+.timeline li{border-left:3px solid var(--line);padding:2px 0 2px 12px}
+.timeline time{font-size:12px;color:var(--soft)}
+.login{max-width:420px;margin:12vh auto;background:#fff;border:1px solid var(--line);border-radius:14px;padding:28px}
+.login h1{font-family:Georgia,serif}
+.steps{display:flex;gap:6px;flex-wrap:wrap;margin:6px 0 12px}
+.steps span{font-size:12px;padding:4px 10px;border-radius:999px;background:#ECEAE3;color:#666}
+.steps span.on{background:var(--navy);color:#fff}
