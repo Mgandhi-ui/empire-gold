@@ -2,6 +2,7 @@
 import { planFor } from '@/lib/project';
 
 type Flat = { no: string; floor: number; type: string; sqft: number; booked: boolean };
+const dock = (h: Flat) => h.floor >= 9 && h.floor <= 14 && /0[45]$/.test(h.no);
 const ord = (n: number) => `${n}${n === 1 ? 'st' : n === 2 ? 'nd' : n === 3 ? 'rd' : 'th'}`;
 const NOTE: Record<number, string> = { 8: 'Includes the 1.5 BHK, the largest home in Phase II.', 15: 'Top floor, beside the fitness centre and the open-to-sky terraces.' };
 
@@ -18,7 +19,7 @@ export default function Floors({ flats }: { flats: Flat[] }) {
             <summary>
               <span className="bar" aria-hidden="true" />
               <span className="n">{n}</span>
-              <span className="mix">{homes.length} homes · {mix}</span>
+              <span className="mix">{homes.length} homes: {mix}</span>
               <span className="open">{open === 0 ? 'All booked' : `${open} open`}</span>
               <span className="chev" aria-hidden="true" />
             </summary>
@@ -26,7 +27,7 @@ export default function Floors({ flats }: { flats: Flat[] }) {
               <div>
                 <ul className="homes">
                   {homes.map((h) => (
-                    <li key={h.no} className={h.booked ? 'sold' : ''}><b>Flat {h.no}</b><span>{h.type} · {h.sqft} sq.ft</span></li>
+                    <li key={h.no} className={h.booked ? 'sold' : ''}><b>Flat {h.no}{dock(h) && <i className="dk" title="Mazagon Dock side" />}</b><span>{h.type}, {h.sqft} sq.ft</span></li>
                   ))}
                 </ul>
                 {NOTE[n] && <p className="cap" style={{ marginTop: 14 }}>{NOTE[n]}</p>}

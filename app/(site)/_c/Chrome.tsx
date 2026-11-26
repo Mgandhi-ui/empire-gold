@@ -10,9 +10,9 @@ export function Header() {
   return (
     <header className="hdr">
       <div className="wrap">
-        <Link className="logo" href="/"><i aria-hidden="true" />Empire Gold</Link>
+        <Link className="logo" href="/">Empire Gold</Link>
         <nav className="nav" aria-label="Sections">
-          <Link href="/#floors">Floors</Link><Link href="/#homes">Inside</Link>
+          <Link href="/#homes">Homes</Link><Link href="/#floors">Floors</Link><Link href="/#built">Specifications</Link>
           <Link href="/#location">Location</Link><Link href="/partners">Brokers</Link><Link href="/#visit">Visit</Link>
         </nav>
         <div className="rera" aria-label={`MahaRERA registration ${P.rera}`}>
