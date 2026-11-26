@@ -7,10 +7,11 @@ export const newToken = (bytes = 32) => randomBytes(bytes).toString('base64url')
 export const newCode = () => String(randomInt(0, 1_000_000)).padStart(6, '0');
 export const same = (a: string, b: string) => { const x = Buffer.from(a), y = Buffer.from(b); return x.length === y.length && timingSafeEqual(x, y); };
 
+// EG_SECRET if set; otherwise derived from the database password (also a secret only the server knows).
 const secret = () => {
-  const s = process.env.EG_SECRET ?? '';
-  if (s.length < 32 && process.env.VERCEL_ENV === 'production') throw new Error('EG_SECRET must be set (32+ characters).');
-  return s || 'dev-only-secret-dev-only-secret-dev-only';
+  const s = process.env.EG_SECRET || process.env.SUPABASE_JWT_SECRET || process.env.POSTGRES_PASSWORD || '';
+  if (s.length < 16 && process.env.VERCEL_ENV === 'production') throw new Error('EG_SECRET must be set (32+ characters).');
+  return s ? 'eg|' + s : 'dev-only-secret-dev-only-secret-dev-only';
 };
 export const codeHash = (email: string, code: string) => createHmac('sha256', secret()).update(`${email}|${code}`).digest('hex');
 

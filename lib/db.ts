@@ -7,7 +7,12 @@ pg.types.setTypeParser(1700, (v) => Number(v));
 // dates stay as 'YYYY-MM-DD' text, so no time-zone shifts.
 pg.types.setTypeParser(1082, (v) => v);
 
-const url = process.env.EG_DATABASE_URL ?? '';
+// EG_DATABASE_URL if set; otherwise the URL the Supabase ↔ Vercel integration adds by itself (pooled, port 6543).
+const raw = process.env.EG_DATABASE_URL || process.env.POSTGRES_URL || process.env.POSTGRES_PRISMA_URL || '';
+// Drop sslmode/supa from the link: newer pg reads sslmode=require as "verify the certificate", which Supabase's pooler fails.
+const url = (() => {
+  try { const u = new URL(raw); ['sslmode', 'supa', 'pgbouncer'].forEach((k) => u.searchParams.delete(k)); return u.toString(); } catch { return raw; }
+})();
 const g = globalThis as unknown as { egPool?: pg.Pool };
 export const pool = g.egPool ?? new pg.Pool({
   connectionString: url,
